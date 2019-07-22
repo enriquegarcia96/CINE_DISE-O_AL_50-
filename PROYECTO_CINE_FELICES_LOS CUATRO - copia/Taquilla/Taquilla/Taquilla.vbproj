@@ -1,0 +1,430 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5E82A7F8-74E3-4013-9864-35176635A489}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Sub Main</StartupObject>
+    <RootNamespace>Taquilla</RootNamespace>
+    <AssemblyName>Taquilla</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Taquilla.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Taquilla.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AlphaBlendTextBox">
+      <HintPath>..\..\..\AlphaBlendTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=8.0.15.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="TransControl_src">
+      <HintPath>..\..\..\TransControl_src\TransControl_src.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="boletos.Designer.vb">
+      <DependentUpon>boletos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="boletos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clases\BD.vb" />
+    <Compile Include="Clases\Elementos.vb" />
+    <Compile Include="Clases\Funciones.vb" />
+    <Compile Include="Clases\Inicio.vb" />
+    <Compile Include="Mantenimiento\Cartelera\Cartelera.Designer.vb">
+      <DependentUpon>Cartelera.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Cartelera\Cartelera.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Cartelera\editar_cartelera.Designer.vb">
+      <DependentUpon>editar_cartelera.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Cartelera\editar_cartelera.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Cartelera\nueva_cartelera.Designer.vb">
+      <DependentUpon>nueva_cartelera.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Cartelera\nueva_cartelera.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Editar silla.Designer.vb">
+      <DependentUpon>Editar silla.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Editar silla.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\editar_formato.Designer.vb">
+      <DependentUpon>editar_formato.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\editar_formato.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Nueva silla.Designer.vb">
+      <DependentUpon>Nueva silla.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Nueva silla.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\nuevo_formato.Designer.vb">
+      <DependentUpon>nuevo_formato.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\nuevo_formato.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Peliculas\EditarPelicula.Designer.vb">
+      <DependentUpon>EditarPelicula.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Peliculas\EditarPelicula.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Peliculas\EliminarPelicula.Designer.vb">
+      <DependentUpon>EliminarPelicula.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Peliculas\EliminarPelicula.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Peliculas\NuevaPelicula.Designer.vb">
+      <DependentUpon>NuevaPelicula.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Peliculas\NuevaPelicula.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Salas\editar_sala.Designer.vb">
+      <DependentUpon>editar_sala.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Salas\editar_sala.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Salas\nueva_sala.Designer.vb">
+      <DependentUpon>nueva_sala.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Salas\nueva_sala.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MySql\Data.vb" />
+    <Compile Include="Registro.Designer.vb">
+      <DependentUpon>Registro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservacion.designer.vb">
+      <DependentUpon>Reservacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reservacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\formato.Designer.vb">
+      <DependentUpon>formato.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\formato.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIParent1.Designer.vb">
+      <DependentUpon>MDIParent1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MDIParent1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm1.Designer.vb">
+      <DependentUpon>LoginForm1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="pagos.Designer.vb">
+      <DependentUpon>pagos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="pagos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Peliculas\peliculas.Designer.vb">
+      <DependentUpon>peliculas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Peliculas\peliculas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Salas\sala.Designer.vb">
+      <DependentUpon>sala.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Salas\sala.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\sillas.Designer.vb">
+      <DependentUpon>sillas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\sillas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="boletos.resx">
+      <DependentUpon>boletos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Cartelera\Cartelera.resx">
+      <DependentUpon>Cartelera.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Cartelera\editar_cartelera.resx">
+      <DependentUpon>editar_cartelera.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Cartelera\nueva_cartelera.resx">
+      <DependentUpon>nueva_cartelera.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Editar silla.resx">
+      <DependentUpon>Editar silla.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\editar_formato.resx">
+      <DependentUpon>editar_formato.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Nueva silla.resx">
+      <DependentUpon>Nueva silla.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\nuevo_formato.resx">
+      <DependentUpon>nuevo_formato.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Peliculas\EditarPelicula.resx">
+      <DependentUpon>EditarPelicula.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Peliculas\EliminarPelicula.resx">
+      <DependentUpon>EliminarPelicula.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Peliculas\NuevaPelicula.resx">
+      <DependentUpon>NuevaPelicula.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Salas\editar_sala.resx">
+      <DependentUpon>editar_sala.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Salas\nueva_sala.resx">
+      <DependentUpon>nueva_sala.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registro.resx">
+      <DependentUpon>Registro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservacion.resx">
+      <DependentUpon>Reservacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\formato.resx">
+      <DependentUpon>formato.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIParent1.resx">
+      <DependentUpon>MDIParent1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm1.resx">
+      <DependentUpon>LoginForm1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pagos.resx">
+      <DependentUpon>pagos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Peliculas\peliculas.resx">
+      <DependentUpon>peliculas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Salas\sala.resx">
+      <DependentUpon>sala.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\sillas.resx">
+      <DependentUpon>sillas.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d35ed1e476e0f0e68efd9c94d91b05aa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimazar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rubbish-bin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\x-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\color1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\color 2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1657b964b68fc74.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\08d65de976b48d127dd550c72bace460.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colores.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colores1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colores2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colores3.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colores4.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\colores5.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cine.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cine1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cine2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\movie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\movie1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3d-glasses %288%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cineee.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sala-proyeccion-cine_23-2147502361.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ALLANNNN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoreal.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logofinal.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cogwheel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\script %282%29.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
